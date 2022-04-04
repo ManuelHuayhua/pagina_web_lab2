@@ -1,0 +1,328 @@
+/* comprobamos que el css funciona*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*quita la separacion */
+}
+
+body{
+    font-family: 'open sans'; /*tipo de letra*/
+}
+.contenedor{
+    padding: 60px 0; /*arriba, abajo*/ /*0 lados*/
+    width: 80%;
+    max-width: 10000px;
+    margin: auto; /*centrarolo todo */
+    overflow: hidden; /* si algo quiere salirse del contenedor se esconda*/
+}
+.titulo{
+    color: #642a73;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px; /* distinguirlo del contenido de cada seccion*/
+}
+
+/* heder*/
+/*para ello se busco un color espeificos en uigradients*/
+/* le agregamos trasnparencia*/
+
+header{
+    width: 100%;
+    height: 600px; /*altura del area*/
+    background: #12c2e9; 
+     /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(0, 90%, 64%, 0.616), hsla(280, 78%, 69%, 0.623), #12c2e9),url(../Imagenes/2j.jpg); /* para que nos aseguremos del color*/  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(0, 90%, 64%, 0.616), hsla(280, 78%, 69%, 0.384), #12c2e9),url(../Imagenes/2j.jpg); 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    position: relative; /* ajustar el efecto que pusimos*/
+}
+nav{
+    text-align: right; /* se va a la derecha*/
+    padding: 30px 50px 0 0;  /*arriba,derecha,abajo,izquierda*/
+}
+nav > a{  /* directo a los elementos a*/
+    color: white;
+    font-weight: 300; /* la fuente sea mas ligera*/
+    text-decoration:none; /* quita el subrayado*/
+    margin-right: 10px; /* separa uno del otro*/
+ 
+}
+nav > a:hover{ /* hoven al pasar el mause sobre elmento */
+    text-decoration: underline; /* agrela el subrayado*/
+
+}
+
+.hola{
+    position: absolute;
+    bottom: 0; /*desplazar un elemento respecto a su posición original tomando como referencia el borde inferior del elemento*/
+    width: 100%;
+/* hace que la clase agregada  hola  se dirija hacia a parte de debajo*/
+}
+header .texto1{
+    display: flex;/* coloca la caja con un compotamiento adaptable*/
+    text-align: center;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* hace que h1 se vea uno de bajo del otro*/
+}
+
+.texto1 h1{
+    font-size: 50px;
+    color: white;  
+}
+.texto1 h2{
+    font-size: 30px;
+    font-weight: 300;/* mas ligero*/
+    color: white;  
+}
+
+.contenedor-nosotros{
+    display: flex;
+    justify-content: space-evenly; /* reparte el esapcio equitativamente*/
+}
+.primeraimg{
+    width: 48%;
+}
+.contenedor-nosotros .contenido{
+    width: 48%; /*ancho*/
+}
+.contenido h3{
+    margin-bottom: 15px;
+
+}
+.contenido h3 span{
+    background: purple; /*fondo*/
+    color: white;
+    border-radius: 50%; /*asi sale redondo*/
+    display: inline-block; /*le da propiedad de bloque*/
+    text-align: center;
+    width:30px; 
+    height: 30px;
+    padding: 2px; /* asi no se ve tan pegado*/
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5); /* para que tenga un sombreado*/
+}
+.contenido p{
+    padding: 0px 0px 30px 15px; /* arriiba,derecha,abajo,izquierda*/
+    font-weight: 30px; /*especifica el peso de la letra */
+    text-align: justify;
+}
+
+/*---- imagenes*/
+.portafolio{
+    background: white; /*damos color a tpoda una seccion*/
+
+}
+.galeria-por{
+    display: flex;/*se ajusta para que se vea apresiable*/
+    justify-content: space-evenly; 
+    flex-wrap: wrap; /* hace que se dispercen las imagenes */
+
+}
+.galeria p{
+    text-align: center;
+}
+.imagenes5{
+    width: 50%;/* para que se peudan ver las imagens **/
+    margin-bottom: 20px; 
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer; 
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+
+}
+.imagenes5 > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;/*crea cajas las cuales se alinian en forma simultanea  **/
+}
+
+.galeria{
+    position: absolute; /* posicion absooluta*/
+    width: 100%;/*ancho*/
+    height: 100%; /*altura del area**/
+    top: 0;
+    transform: scale(0); /*hace que desaparesacan los inconos propuestos*/
+    background: hsla(273, 91%, 27%, 0.7);/* el fondo*/
+    transition:  transform,1s; /* que funciene la animacion*/
+    justify-content : center;
+    flex-direction : column;/*para que se va uno de bajo de otro*/
+    display :flex ; /*se coloca en un lugar apreciable*/
+    align-items:center
+}
+.galeria img{
+    width: 50px;
+    
+}
+.galeria p{
+    color: white
+}
+.imagenes5:hover .galeria{
+    transform: scale(1); /* fuciona co el scale de arriba*/
+}
+
+/* clienetes */
+.cards{
+    display: flex;/*hace que tenga un comportamiento adaptable*/
+    justify-content: space-evenly; /* define el esapcoio*/
+}
+.cards .card{
+    background: #642a73;
+    display: flex;
+    width: 46%; /*ancho*/
+    height: 200px; /*altura del contenido*/
+    align-items: center;
+    justify-content: space-evenly;
+    /*con ello le decimos los elementos los aliminos  y hacemos un espacio entre ellos*/
+    border-radius: 5px; /* estabelece el redondeo**/
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .6);/* colocamos el sombreado*/
+
+}
+.cards  .card img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /*la imagen se note mas**/
+    border: 3px solid white; /* borde del circulo*/
+    border-radius: 50%; 
+    display: block;
+}
+
+.cards .card > .contenido-card{
+    width: 60%;
+    color: white;   
+}
+.cards .card >.contenido-card p{
+    font-weight: 300; /* se ve mas claro*/
+    padding-top: 5px;/* espaciado de arriba*/
+}
+/*  */
+.servicios{
+    background: white;
+    padding-bottom: 30px; /* espacio de abajo*/
+
+}
+.servicio1{
+    display: flex;
+    justify-content: space-between; /*le da un espacio mas aceptable*/
+    align-items: center; /*centrado*/
+}
+.servicioindi{
+    width: 28%;
+    text-align: center;
+}
+
+.servicioindi img{
+    width: 90%;
+}
+.servicioindi h3{
+    margin: 10px 0; /*abajo y arriba, lados**/
+
+}
+.servicioindi p{
+    font-weight: 300; /*especiifica el peso de la letra*/
+    text-align: justify;
+}
+
+/*   */
+footer{
+    background: #414141; /*fondo*/
+    padding: 60px 0 30px 0; /*arriba, derecha,abajo,izquierda*/
+    margin: auto; /* cetramos todo*/
+    overflow: hidden;/*nada salga del fopter*/
+}
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly; /* se reparte los elementos equitativamente */
+    margin:auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid white; /* 1px solido color blanco*/
+}
+.contenedor-foo{
+    text-align: center; /*centroamos */
+  
+}
+.contenedor-foo h4{
+    color: white;
+    border-bottom: 3px solid #642a73;
+    padding-bottom: 5px; /*espacio de abajo */
+    margin-bottom: 10px;/* 10 px del margen de abajo*/
+}
+.contenedor-foo p{
+    color: #ccc;
+
+}
+.final-titu{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #9797;
+
+}
+
+/***/
+
+
+/* responsive*/
+@media screen and (max-width:90px){/* cuando se llegue a 990 se hagan muchos cambios*/
+    header{
+        background-position: center;/*centrado*/
+    }
+
+    .contenedor-nosotros{
+        flex-direction: column; /*todo se va a una columna*/
+        justify-content: center;
+        align-items: center;
+    }
+    .contenedor-nosotros .contenido{
+        width: 90%;
+    }
+    .primeraimg{
+        width: 90%;
+    }
+    .imagenes5{
+        width: 44%;
+    }
+    .cards{
+        flex-direction: column; /* todo se va a una columna*/
+        justify-content: center; /*se centra*/
+        align-items: center;
+    }
+    .cards .card{
+        width: 90%; /* el ancho */
+    }
+    .cards .card:first-child{ /*priemr elemento */
+        margin-bottom: 30px; /*separa lo de abajo*/
+    }
+
+    /* servicios */
+    .servicio1{
+        justify-content: center;/* se cnetra*/
+        flex-direction: column;/* se establece una de bajo de otra coolumna*/
+
+    }
+    .servicioindi{
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /*el priemr elemento y el segundo tengan*/
+    .servicioindi:nth-child(1), .servicioindi:nth-child(2){
+        margin-bottom: 25%;
+    }
+    .servicioindi img{
+        width: 90%; /*el ancho de la imagn*/
+
+    }
+    
+    
+    
+    
+} 
+
